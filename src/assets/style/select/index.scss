@@ -1,0 +1,8 @@
+@use '../input';
+
+@mixin reset() {
+	@include input.reset;
+
+	background-color: transparent;
+	cursor: pointer;
+}

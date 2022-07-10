@@ -1,0 +1,30 @@
+:root {
+	--kuku--base: 12;
+	--kuku--base-px: 12px;
+	--kuku--font-family: manrope, sans-serif;
+	--kuku--clamp: clamp(var(--kuku--base-px), 3.5vw, 20px);
+	--primary-brand-color: #2ab37b;
+	--invert-primary-brand-color: #fff;
+	--secondary-brand-color: #ee5c5c;
+	--primary-text-color: #403e4b;
+
+	// text-field
+	--kuku--text-field-background: #f8f8fa;
+	--kuku--text-field-placeholder: rgb(64 62 75 / 24%);
+	--text-field-color: var(--primary-text-color);
+
+	// text-field-label
+	--kuku--text-field-label-color: #98a1b7;
+
+	// checkbox-field
+	--kuku--checkbox-field-background: #efeff3;
+	--kuku--checkbox-field-color: var(--primary-text-color);
+	--kuku--checkbox-field-border: var(--primary-text-color);
+	--kuku--checkbox-field-mark: var(--primary-brand-color);
+	--kuku--checkbox-field-mark-color: #fff;
+	--kuku--checkbox-field-mark--isFocus: #239f6d;
+
+	// form-element
+	--kuku--form-element-border: #efeff3;
+	--kuku--form-element-color--focus: var(--primary-text-color);
+}

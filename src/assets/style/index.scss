@@ -1,0 +1,27 @@
+@import './properties';
+
+.kuku {
+	font-family: var(--kuku--font-family);
+
+	&,
+	& *,
+	&::before,
+	&::after {
+		box-sizing: border-box;
+	}
+}
+
+@mixin sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	border: 0;
+	clip: rect(0, 0, 0, 0);
+}
+
+.sc-only {
+	@include sr-only;
+}

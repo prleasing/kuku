@@ -1,0 +1,71 @@
+{
+	"name": "@prleasing/kuku",
+	"description": "Библиотека компонентов Vue 3",
+	"version": "1.0.0",
+	"keywords": [
+		"typescript",
+		"vue 3",
+		"components",
+		"components library",
+		"ui components",
+		"ui components library"
+	],
+	"main": "dist/index.cjs.js",
+	"module": "dist/index.es.js",
+	"types": "dist/index.d.ts",
+	"jsdelivr": "dist/index.iife.js",
+	"files": [
+		"dist",
+		"README.md"
+	],
+	"repository": {
+		"url": "https://github.com/prleasing/kuku"
+	},
+	"homepage": "https://prleasing.github.io/kuku",
+	"license": "Apache-2.0",
+	"maintainers": [
+		"Yakin Nikita <taknepoidet@yandex.ru>"
+	],
+	"scripts": {
+		"preinstall": "git config core.hooksPath ./.hooks",
+		"dev": "vite build --watch",
+		"build": "tsc && vite build",
+		"eslint": "eslint --fix .",
+		"stylelint": "stylelint --fix \"src/**/*.{scss,css,sass,.vue}\"",
+		"prettier": "prettier --ignore-unknown --write .",
+		"beautifier": "npm run stylelint && npm run eslint && npm run prettier",
+		"prepublish": "npm run build"
+	},
+	"devDependencies": {
+		"@taknepoidet-config/eslint-config": "^1.9.2",
+		"@taknepoidet-config/prettier": "^1.9.1",
+		"@taknepoidet-config/stylelint": "^1.9.2",
+		"@vitejs/plugin-vue": "^2.3.3",
+		"eslint": "^8.18.0",
+		"lint-staged": "^13.0.3",
+		"prettier": "^2.7.1",
+		"sass": "^1.53.0",
+		"stylelint": "^14.9.1",
+		"vite": "^2.9.9",
+		"vite-plugin-dts": "^1.2.0",
+		"vite-plugin-svg-icons": "^2.0.1"
+	},
+	"dependencies": {
+		"@interactjs/types": "^1.10.17",
+		"@prleasing/use": "^1.1.0",
+		"@prleasing/utility": "^1.1.0",
+		"interactjs": "^1.10.17",
+		"luxon": "^3.0.1"
+	},
+	"peerDependencies": {
+		"vue": "^3.0.0",
+		"vue-router": "^4.0.0"
+	},
+	"lint-staged": {
+		"{src,test}/**/*.ts": "eslint"
+	},
+	"publishConfig": {
+		"access": "public",
+		"registry": "https://registry.npmjs.org/"
+	}
+}

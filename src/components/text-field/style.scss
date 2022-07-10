@@ -1,0 +1,27 @@
+@use '../../assets/style/input';
+@use '../../assets/style/util';
+
+.kuku-text-field {
+	@include input.reset;
+
+	--text-field-border-radius: calc(#{(util.calculate-size(8))});
+
+	display: block;
+	width: 100%;
+	padding: calc(#{(util.calculate-size(10))}) calc(#{(util.calculate-size(16))});
+	color: var(--text-field-color);
+	font-weight: 500;
+	font-size: calc(#{(util.calculate-size(16))});
+	line-height: 150%;
+	background: var(--kuku--text-field-background);
+	border: none;
+	border-radius: var(--text-field-border-radius);
+	outline: none;
+	transition: color 200ms ease-in-out, border 200ms ease-in-out;
+	appearance: none;
+
+	&::placeholder {
+		color: var(--kuku--text-field-placeholder);
+		font: inherit;
+	}
+}

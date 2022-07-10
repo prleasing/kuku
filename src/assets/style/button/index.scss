@@ -1,0 +1,130 @@
+@use '../util';
+
+:root {
+	--button-outline-border: rgb(100 100 114 / 24%);
+	--button-brand: var(--primary-brand-color);
+	--button-brand-color: var(--invert-primary-brand-color);
+	--button-brand--isHover: #239f6d;
+	--button-brand--isActive: #403e4b;
+	--button-brand-color--isActive: var(--primary-brand-color);
+	--button-font-size: calc(#{(util.calculate-size(14))});
+	--button-radius: calc(#{(util.calculate-size(8))});
+	--button-height: calc(#{(util.calculate-size(50))});
+	--kuku--button-icon: currentcolor;
+	--kuku--button-icon--isHover: currentcolor;
+	--kuku--button-icon--isActive: currentcolor;
+	--kuku--button-base: #fff;
+}
+
+@mixin reset() {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	color: inherit;
+	font: inherit;
+	font-family: var(--kuku--font-family);
+	text-decoration: none;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	appearance: none;
+	user-select: none;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+@mixin base {
+	$self: &;
+
+	@include reset;
+
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	height: var(--button-height);
+	padding: 0 calc(#{(util.calculate-size(16))});
+	color: var(--primary-text-color);
+	font-weight: 500;
+	font-size: var(--button-font-size);
+	line-height: 100%;
+	background-color: var(--kuku--button-base);
+	border: 1px solid var(--primary-text-color);
+	border-radius: var(--button-radius);
+	cursor: pointer;
+	transition: color 200ms ease-in-out, background 200ms ease-in-out, border 200ms ease-in-out;
+	appearance: none;
+	user-select: none;
+
+	@media (hover: hover) {
+		&:hover {
+			color: #fff;
+			background: #646472;
+			border-color: #646472;
+			outline: none;
+
+			.kuku-icon {
+				color: var(--kuku--button-icon--isHover);
+			}
+		}
+	}
+
+	&:focus,
+	&:focus-visible {
+		color: #fff;
+		background: #646472;
+		border-color: #646472;
+		outline: none;
+	}
+	&:active,
+	#{$self}--active {
+		color: #fff;
+		background: #403e4b;
+		border-color: #403e4b;
+
+		.kuku-icon {
+			color: var(--kuku--button-icon--isActive);
+		}
+	}
+
+	&:disabled {
+		background-color: #efeff3;
+		border-color: #efeff3;
+		pointer-events: none;
+	}
+}
+
+@mixin outline {
+	border: 1px solid var(--button-outline-border);
+}
+
+@mixin brand($self: &) {
+	color: var(--button-brand-color);
+	background-color: var(--primary-brand-color);
+	border: none;
+
+	@media (hover: hover) {
+		&:hover {
+			background-color: var(--button-brand--isHover);
+			outline: none;
+		}
+	}
+
+	&:focus,
+	&:focus-visible {
+		background-color: var(--button-brand--isHover);
+		outline: none;
+	}
+
+	&:active,
+	#{$self}--active {
+		color: var(--button-brand-color--isActive);
+		background-color: var(--button-brand--isActive);
+	}
+
+	&:disabled {
+		color: rgb(100 100 114 / 50%);
+		background: #efeff3;
+	}
+}

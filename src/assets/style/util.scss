@@ -1,0 +1,16 @@
+@use 'sass:color';
+
+@function calculate-size($value) {
+	@return ((#{$value} / var(--kuku--base, 12)) + '* var(--kuku--clamp)');
+}
+
+@mixin to-hsl($color, $property) {
+	#{$property}-h: #{color.hue($color)};
+	#{$property}-s: #{color.saturation($color)};
+	#{$property}-l: #{color.lightness($color)};
+	#{$property}: hsl(var(#{$property}-h), var(#{$property}-s), var(#{$property}-l));
+}
+
+@function lightness($property, $value) {
+	@return hsl(var(#{$property}-h), var(#{$property}-s), calc(var(#{$property}-l) + #{$value + '%'}));
+}
