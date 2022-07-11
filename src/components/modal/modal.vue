@@ -190,4 +190,25 @@ export default defineComponent({
 	//transform: translate3d(200%, -50%, 0);
 	transform: translate3d(-50%, 200%, 0) !important;
 }
+
+html.overflow-hidden {
+	height: 100vh;
+	//position: fixed;
+	overflow: hidden;
+	body {
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		overflow: hidden;
+		inset: 0;
+		text-size-adjust: 100%;
+	}
+
+	#app {
+		position: relative;
+		top: var(--overlay-scroll-position);
+	}
+}
 </style>

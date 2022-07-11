@@ -89,10 +89,10 @@ export default defineComponent({
 @use '../../assets/style/util';
 .kuku-modal-card {
 	border-radius: calc(#{(util.calculate-size(16))});
-	width: calc(100% - var(--ears, 0px) * 2);
+	width: calc(100% - var(--ears, 16px) * 2);
 	pointer-events: auto;
 	//max-width: 600px;
-	max-width: calc(var(--container, 600px) - var(--ears, 0px));
+	max-width: calc(var(--container, 600px) - var(--ears, 16px));
 	overflow: auto;
 	color: var(--primary-text-color);
 	right: auto;

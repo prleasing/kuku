@@ -1,7 +1,7 @@
 {
 	"name": "@prleasing/kuku",
 	"description": "Библиотека компонентов Vue 3",
-	"version": "1.0.0",
+	"version": "1.0.3",
 	"keywords": [
 		"typescript",
 		"vue 3",
@@ -21,7 +21,7 @@
 	"repository": {
 		"url": "https://github.com/prleasing/kuku"
 	},
-	"homepage": "https://prleasing.github.io/kuku",
+	"homepage": "https://prleasing.github.io/kuku/",
 	"license": "Apache-2.0",
 	"maintainers": [
 		"Yakin Nikita <taknepoidet@yandex.ru>"
@@ -36,7 +36,9 @@
 		"stylelint": "stylelint --fix \"src/**/*.{scss,css,sass,.vue}\"",
 		"prettier": "prettier --ignore-unknown --write .",
 		"beautifier": "npm run stylelint && npm run eslint && npm run prettier",
-		"prepublish": "npm run beautifier npm run build"
+		"build-gh-pages": "gh-pages -d docs/.vuepress/dist",
+		"deploy": "npm run docs:build && npm run build-gh-pages",
+		"prepublishOnly": "npm run build"
 	},
 	"devDependencies": {
 		"@taknepoidet-config/eslint-config": "^1.9.2",
@@ -46,6 +48,7 @@
 		"@vitejs/plugin-vue": "^2.3.3",
 		"@vuepress/plugin-register-components": "^2.0.0-beta.48",
 		"eslint": "^8.18.0",
+		"gh-pages": "^4.0.0",
 		"lint-staged": "^13.0.3",
 		"prettier": "^2.7.1",
 		"sass": "^1.53.0",
@@ -57,8 +60,8 @@
 	},
 	"dependencies": {
 		"@interactjs/types": "^1.10.17",
-		"@prleasing/use": "^1.1.1",
-		"@prleasing/utility": "^1.1.0",
+		"@prleasing/use": "^1.1.2",
+		"@prleasing/utility": "^1.1.1",
 		"@vue/component-compiler-utils": "^3.3.0",
 		"@vuepress/utils": "^2.0.0-beta.48",
 		"interactjs": "^1.10.17",

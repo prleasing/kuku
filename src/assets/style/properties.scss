@@ -2,7 +2,7 @@
 	--kuku--base: 12;
 	--kuku--base-px: 12px;
 	--kuku--font-family: manrope, sans-serif;
-	--kuku--clamp: clamp(var(--kuku--base-px), 3.5vw, 20px);
+	--kuku--clamp: clamp(var(--kuku--base-px, 14px), 3.5vw, 20px);
 	--primary-brand-color: #2ab37b;
 	--invert-primary-brand-color: #fff;
 	--secondary-brand-color: #ee5c5c;
