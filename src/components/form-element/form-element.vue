@@ -61,17 +61,46 @@ export default defineComponent({
 			display: inline-block;
 		}
 	}
+	> .kuku-date-range,
+	> .kuku-data-filed,
 	> .kuku-security-field .kuku-text-field,
 	> .kuku-text-field,
 	> .kuku-select-field,
 	> .kuku-slider-field {
 		padding-top: calc(#{(util.calculate-size(24))});
-		border-radius: var(--text-field-border-radius) var(--text-field-border-radius) 0 0;
+		border-radius: calc(#{(util.calculate-size(8))}) calc(#{(util.calculate-size(8))}) 0 0;
 		border-bottom: 1px solid var(--kuku--form-element-border);
+	}
+	> .kuku-data-filed {
+		background: var(--kuku--text-field-background);
+		.kuku-data-filed__button {
+			width: 100%;
+			text-align: left;
+			justify-content: start;
+			background-color: transparent;
+		}
+	}
+	> .kuku-data-filed.kuku-data-filed--opened {
+		.kuku-data-filed__button {
+			background-color: transparent;
+			color: var(--text-field-color);
+		}
+	}
+	> .kuku-date-range {
+		width: 100%;
+		justify-content: space-between;
+		padding-bottom: calc(#{(util.calculate-size(4))});
+		.kuku-date-range__date {
+			flex: 1;
+			.kuku-data-filed__button {
+				width: 100%;
+			}
+		}
 	}
 
 	@media (hover: hover) {
 		&:hover {
+			> .kuku-data-filed,
 			> .kuku-security-field .kuku-text-field,
 			> .kuku-text-field,
 			> .kuku-select-field,
@@ -82,6 +111,7 @@ export default defineComponent({
 	}
 
 	&#{$self}--error {
+		> .kuku-data-filed,
 		> .kuku-text-field-label {
 			color: var(--secondary-brand-color);
 		}
@@ -97,6 +127,7 @@ export default defineComponent({
 		> .kuku-text-field-label {
 			color: var(--kuku--form-element-color--focus);
 		}
+		> .kuku-data-filed,
 		> .kuku-security-field .kuku-text-field,
 		> .kuku-text-field,
 		> .kuku-select-field,

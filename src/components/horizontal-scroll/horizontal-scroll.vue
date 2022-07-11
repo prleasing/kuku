@@ -42,7 +42,9 @@ export default defineComponent({
 			}
 		}
 
-		useMutationObserver(scroll, onScroll);
+		if (typeof window !== 'undefined' && MutationObserver) {
+			useMutationObserver(scroll, onScroll);
+		}
 
 		useEventListener(scroll, 'scroll', onScroll);
 

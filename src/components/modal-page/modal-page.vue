@@ -35,7 +35,7 @@
 <script lang="ts">
 import { computed, defineComponent, nextTick, onMounted, onUpdated, reactive, ref, watch } from 'vue';
 import { animationNumber, clamp, rubber } from '@prleasing/utility';
-import { useModel, useRef, useToggle, useWindowResize } from '@prleasing/use';
+import { useModel, useRef, useResizeObserver, useToggle, useWindowResize } from '@prleasing/use';
 import { VerticalScroll } from '../vertical-scroll';
 import { ToucheDrag } from '../touche-drag';
 import { Modal, PropsModal } from '../modal';
@@ -123,9 +123,13 @@ export default defineComponent({
 			}
 		}
 
-		useWindowResize(updateTop);
+		if (typeof window !== 'undefined') {
+			useWindowResize(updateTop);
+		}
 
-		const resizeObserver = new ResizeObserver(() => {
+		// const resizeObserver = new ResizeObserver(() => {});
+
+		useResizeObserver(modalContentWrapper, () => {
 			updateTop();
 		});
 
@@ -262,7 +266,7 @@ export default defineComponent({
 			await nextTick();
 			position.y = 0;
 			if (modalContentWrapper.value && cardEmulatorTop.value && fullEmulatorTop.value) {
-				resizeObserver.observe(modalContentWrapper.value);
+				// resizeObserver.observe(modalContentWrapper.value);
 				const $content = modalContentWrapper.value;
 
 				$content.style.transform = `translate(0%, 0px)`;

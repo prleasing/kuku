@@ -1,6 +1,6 @@
 <template>
 	<div :class="classes">
-		<form-element v-bind="$attrs" :label="label" :error="error" @click-label="clickFromLabel">
+		<form-element v-bind="$attrs" :label="label" :error="error">
 			<template #default="slotProps">
 				<slot v-bind="slotProps" />
 			</template>
@@ -38,5 +38,14 @@ export default defineComponent({
 @use '../../assets/style/util';
 .kuku-form-element-slider {
 	padding-bottom: calc(#{(util.calculate-size(23))});
+
+	.kuku-slider-field {
+		.kuku-slider-field__range {
+			bottom: -1px;
+		}
+	}
+	.kuku.kuku-error-text {
+		padding-top: calc(#{(util.calculate-size(13))});
+	}
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-	<tabs-base ref="root" :class="classes" :active="active" :list-classes="listClasses">
+	<tabs-base ref="root" v-model="active" :class="classes" :list-classes="listClasses">
 		<slot />
 	</tabs-base>
 </template>
@@ -19,7 +19,7 @@ export default defineComponent({
 	props: propsTabsBase,
 	setup() {
 		const $root = useExpose(TabsBase);
-		const { modelValue: active } = useModel();
+		const { modelValue: active } = useModel<string>();
 
 		function updateIndicator() {
 			if ($root.value && $root.value.ul !== null) {
@@ -51,7 +51,7 @@ export default defineComponent({
 		const classes = useClasses(bem);
 		const listClasses = bem('list');
 
-		return { root: $root, classes, listClasses };
+		return { root: $root, classes, listClasses, active };
 	}
 });
 </script>

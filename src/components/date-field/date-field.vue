@@ -114,9 +114,13 @@ export default defineComponent({
 			}
 		}
 		const { focus: onFocus, blur: onBlur } = useFocus({
-			onFocus: focusInput,
+			onFocus(event) {
+				emit('focus');
+				focusInput(event);
+			},
 			onBlur() {
 				opened.value = false;
+				emit('blur');
 			}
 		});
 

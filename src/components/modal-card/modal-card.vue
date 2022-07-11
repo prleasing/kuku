@@ -9,8 +9,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, ref } from 'vue';
-import { rubber } from '@prleasing/utility';
+import { defineComponent, reactive, ref, watch } from 'vue';
+import { clamp, rubber } from '@prleasing/utility';
 import { useExpose, useModel } from '@prleasing/use';
 import { ToucheDrag } from '../touche-drag';
 import { Modal } from '../modal';
@@ -39,7 +39,7 @@ export default defineComponent({
 		}
 
 		function opacityChange(value: number) {
-			opacity.value = value;
+			opacity.value = clamp(0, value, 1);
 		}
 		function dragMove(event: any) {
 			requestAnimationFrame(() => {
@@ -71,6 +71,12 @@ export default defineComponent({
 			prefix: false
 		});
 
+		watch(modelValue, () => {
+			if (modelValue.value) {
+				updateTransform(0);
+				opacityChange(1);
+			}
+		});
 		function resetDrag() {
 			position.y = 0;
 		}
@@ -83,9 +89,10 @@ export default defineComponent({
 @use '../../assets/style/util';
 .kuku-modal-card {
 	border-radius: calc(#{(util.calculate-size(16))});
-	width: calc(100% - var(--ears) * 2);
+	width: calc(100% - var(--ears, 0px) * 2);
 	pointer-events: auto;
-	max-width: calc(var(--container) - var(--ears));
+	//max-width: 600px;
+	max-width: calc(var(--container, 600px) - var(--ears, 0px));
 	overflow: auto;
 	color: var(--primary-text-color);
 	right: auto;

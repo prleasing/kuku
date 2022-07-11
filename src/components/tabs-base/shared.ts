@@ -5,10 +5,6 @@ export const propsTabsBase = {
 		type: String as PropType<string | null>,
 		required: false
 	},
-	active: {
-		type: String as PropType<string | null>,
-		required: false
-	},
 	classes: {
 		type: Array as PropType<string[]>,
 		required: false,

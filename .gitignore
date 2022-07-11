@@ -4,4 +4,5 @@ yarn.lock
 dist
 .idea
 .DS_Store
-docs
+/docs/.vuepress/.cache/
+/docs/.vuepress/.temp/

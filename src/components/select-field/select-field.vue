@@ -21,17 +21,14 @@
 
 <script lang="ts">
 import { computed, defineComponent, PropType, watch } from 'vue';
-import { EmptyObject, generateId } from '@prleasing/utility';
+import { generateId } from '@prleasing/utility';
 import { useState } from '@prleasing/use';
 import { Icon } from '../icon';
 import { createNamespace } from '../../util';
 import { useClasses } from '../../composables';
+import { SelectFiledItem } from './types';
 
 const [name, bem] = createNamespace('select-field');
-
-interface Item extends EmptyObject {
-	key: string;
-}
 
 export default defineComponent({
 	name,
@@ -45,14 +42,14 @@ export default defineComponent({
 			}
 		},
 		items: {
-			type: Array as PropType<Item[]>,
+			type: Array as PropType<SelectFiledItem[]>,
 			required: true,
 			default(this: void) {
 				return [];
 			}
 		},
 		modelValue: {
-			type: [Object, null] as PropType<Item | null>,
+			type: [Object, null] as PropType<SelectFiledItem | null>,
 			required: true,
 			default(this: void) {
 				return { key: '' };

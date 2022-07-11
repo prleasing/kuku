@@ -26,13 +26,16 @@ export default defineComponent({
 
 <style lang="scss">
 @use '../../assets/style/util';
+@use '../../assets/style/button';
 .kuku-line-tab-item {
 	padding: 0;
 	margin: 0;
 	> .tab-base-item__title {
+		@include button.reset;
 		font-size: calc(#{(util.calculate-size(14))});
 		line-height: 140%;
 		color: #403e4b;
+		width: 100%;
 		padding: calc(#{(util.calculate-size(9))});
 		text-align: center;
 		display: block;

@@ -135,7 +135,7 @@ export default defineComponent({
 				if (typeof props.postfix === 'function') {
 					return props.postfix;
 				}
-				return () => props.postfix;
+				return () => '';
 			}
 			return formatting.value;
 		});
@@ -279,7 +279,10 @@ export default defineComponent({
 @import '../text-field/style.scss';
 
 .kuku-slider-field {
+	position: relative;
 	@extend .kuku-text-field !optional;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
 	//padding-bottom: 0;
 
 	&__value {
@@ -315,6 +318,11 @@ export default defineComponent({
 		bottom: 0;
 		left: 0;
 		right: 0;
+		height: calc(#{(util.calculate-size(1))});
+		.kuku-slider-native {
+			position: relative;
+			margin: 0;
+		}
 	}
 	&__labels {
 		bottom: calc(#{(util.calculate-size(-24))});

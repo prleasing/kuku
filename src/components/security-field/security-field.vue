@@ -1,6 +1,6 @@
 <template>
 	<div :class="classes">
-		<text-field :id="id" v-bind="$attrs" :type="show ? 'text' : 'password'" />
+		<text-field :id="id" v-model="secret" v-bind="$attrs" :type="show ? 'text' : 'password'" />
 		<btn reset @click.prevent="toggle">
 			<transition name="eye-fade" mode="out-in">
 				<icon v-if="show" name="eye" :width="24" />
@@ -12,6 +12,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
+import { useModel } from '@prleasing/use';
 import { TextField, propsTextField } from '../text-field';
 import { Icon } from '../icon';
 import { Btn } from '../button';
@@ -26,6 +27,7 @@ export default defineComponent({
 	inheritAttrs: false,
 	props: propsTextField,
 	setup(_, { emit }) {
+		const { modelValue: secret } = useModel<string>();
 		const show = ref(false);
 		const classes = useClasses(bem);
 
@@ -33,7 +35,7 @@ export default defineComponent({
 			show.value = !show.value;
 			emit('toggle-visible', show.value);
 		}
-		return { show, toggle, classes };
+		return { secret, show, toggle, classes };
 	}
 });
 </script>

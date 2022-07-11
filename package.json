@@ -27,6 +27,8 @@
 		"Yakin Nikita <taknepoidet@yandex.ru>"
 	],
 	"scripts": {
+		"docs:dev": "vuepress dev docs",
+		"docs:build": "vuepress build docs",
 		"preinstall": "git config core.hooksPath ./.hooks",
 		"dev": "vite build --watch",
 		"build": "tsc && vite build",
@@ -34,13 +36,15 @@
 		"stylelint": "stylelint --fix \"src/**/*.{scss,css,sass,.vue}\"",
 		"prettier": "prettier --ignore-unknown --write .",
 		"beautifier": "npm run stylelint && npm run eslint && npm run prettier",
-		"prepublish": "npm run build"
+		"prepublish": "npm run beautifier npm run build"
 	},
 	"devDependencies": {
 		"@taknepoidet-config/eslint-config": "^1.9.2",
 		"@taknepoidet-config/prettier": "^1.9.1",
 		"@taknepoidet-config/stylelint": "^1.9.2",
+		"@types/luxon": "^2.3.2",
 		"@vitejs/plugin-vue": "^2.3.3",
+		"@vuepress/plugin-register-components": "^2.0.0-beta.48",
 		"eslint": "^8.18.0",
 		"lint-staged": "^13.0.3",
 		"prettier": "^2.7.1",
@@ -48,12 +52,15 @@
 		"stylelint": "^14.9.1",
 		"vite": "^2.9.9",
 		"vite-plugin-dts": "^1.2.0",
-		"vite-plugin-svg-icons": "^2.0.1"
+		"vite-plugin-svg-icons": "^2.0.1",
+		"vuepress": "^2.0.0-beta.48"
 	},
 	"dependencies": {
 		"@interactjs/types": "^1.10.17",
-		"@prleasing/use": "^1.1.0",
+		"@prleasing/use": "^1.1.1",
 		"@prleasing/utility": "^1.1.0",
+		"@vue/component-compiler-utils": "^3.3.0",
+		"@vuepress/utils": "^2.0.0-beta.48",
 		"interactjs": "^1.10.17",
 		"luxon": "^3.0.1"
 	},
