@@ -6,11 +6,12 @@
 
 <script lang="ts">
 import { defineComponent, nextTick, onBeforeUnmount, onMounted } from 'vue';
-import interact from 'interactjs';
 import { useRef } from '@prleasing/use';
-import { Interactable } from '@interactjs/types';
+import type { Interactable } from '@interactjs/types';
 import { createNamespace } from '../../util';
 import { useClasses } from '../../composables';
+
+const interactAsync = () => import(/* webpackChunkName: "interactjs" */ 'interactjs');
 
 const [name, bem] = createNamespace('touche-drag');
 
@@ -32,7 +33,9 @@ export default defineComponent({
 			emit('dragEnd', event);
 		}
 
-		function setInteract($el: HTMLElement) {
+		async function setInteract($el: HTMLElement) {
+			const { default: interact } = await interactAsync();
+
 			interactInstance = interact($el)
 				.draggable({
 					startAxis: 'y',
@@ -47,7 +50,7 @@ export default defineComponent({
 		onMounted(async () => {
 			await nextTick();
 			if ($element.value && !interactInstance) {
-				setInteract($element.value);
+				setInteract($element.value).then();
 			}
 		});
 

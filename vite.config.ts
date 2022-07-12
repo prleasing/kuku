@@ -6,6 +6,7 @@ import {defineConfig} from 'vite';
 import vue from '@vitejs/plugin-vue';
 // @ts-ignore
 import {createSvgIconsPlugin} from 'vite-plugin-svg-icons';
+import { visualizer } from "rollup-plugin-visualizer";
 
 const isExternal = (id: string) => {
 
@@ -42,7 +43,12 @@ export default defineConfig({
 		},
 		minify: 'terser',
 		rollupOptions: {
-			// external: ['vue'],
+			plugins: [
+				visualizer({
+					emitFile: true,
+					file: 'stats.html'
+				})
+			],
 			external: isExternal,
 			output: {
 				preserveModules: true,

@@ -1,8 +1,7 @@
 {
 	"name": "@prleasing/kuku",
 	"description": "Библиотека компонентов Vue 3",
-	"version": "1.2.0",
-	"sideEffects": false,
+	"version": "1.2.1",
 	"keywords": [
 		"typescript",
 		"vue 3",
@@ -11,6 +10,7 @@
 		"ui components",
 		"ui components library"
 	],
+	"sideEffects": false,
 	"main": "dist/index.cjs.js",
 	"module": "dist/index.es.js",
 	"types": "dist/index.d.ts",
@@ -55,8 +55,8 @@
 		"rollup-plugin-visualizer": "^5.6.0",
 		"sass": "^1.53.0",
 		"stylelint": "^14.9.1",
-		"vite": "^2.9.9",
-		"vite-plugin-dts": "^1.2.0",
+		"vite": "^2.9.14",
+		"vite-plugin-dts": "^1.2.1",
 		"vite-plugin-svg-icons": "^2.0.1",
 		"vuepress": "^2.0.0-beta.48",
 		"@vue/component-compiler-utils": "^3.3.0",
@@ -64,10 +64,9 @@
 		"@interactjs/types": "^1.10.17"
 	},
 	"dependencies": {
-		"interactjs": "^1.10.17",
-		"luxon": "^3.0.1",
-		"@prleasing/use": "^1.2.0",
-		"@prleasing/utility": "^1.2.0"
+		"@prleasing/use": "^1.2.1",
+		"@prleasing/utility": "^1.2.0",
+		"interactjs": "^1.10.17"
 	},
 	"peerDependencies": {
 		"vue": "^3.0.0",
