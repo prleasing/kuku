@@ -1,11 +1,19 @@
-import { resolve } from 'path';
+import {resolve, isAbsolute} from 'path';
 // @ts-ignore
 import dts from 'vite-plugin-dts';
-import { defineConfig } from 'vite';
+import {defineConfig} from 'vite';
 // @ts-ignore
 import vue from '@vitejs/plugin-vue';
 // @ts-ignore
-import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
+import {createSvgIconsPlugin} from 'vite-plugin-svg-icons';
+
+const isExternal = (id: string) => {
+
+	if (["virtual:svg-icons-register", "plugin-vue:export-helper"].includes(id)) {
+		return false
+	}
+	return !id.startsWith(".") && !isAbsolute(id)
+};
 
 export default defineConfig({
 	define: {
@@ -29,13 +37,15 @@ export default defineConfig({
 		lib: {
 			entry: resolve(__dirname, 'src/index.ts'),
 			name: 'kuku',
-			formats: ['es', 'cjs', 'iife'],
+			formats: ['es', 'cjs'],
 			fileName: (format) => `index.${format}.js`
 		},
 		minify: 'terser',
 		rollupOptions: {
-			external: ['vue'],
+			// external: ['vue'],
+			external: isExternal,
 			output: {
+				preserveModules: true,
 				globals: {
 					vue: 'Vue'
 				}

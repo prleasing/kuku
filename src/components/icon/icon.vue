@@ -15,7 +15,7 @@
 import { computed, defineComponent, PropType } from 'vue';
 import { createNamespace } from '../../util';
 import { useClasses } from '../../composables';
-import Sprite from '../../assets/images/sprite.svg';
+// eslint-disable-next-line import/no-unresolved
 
 const [name, bem] = createNamespace('icon');
 
@@ -57,7 +57,9 @@ export default defineComponent({
 
 		const symbolId = computed(() => `#icon-${props.name}`);
 
-		return { symbolId, Sprite, classes, size, version };
+		// eslint-disable-next-line import/no-unresolved
+		import('virtual:svg-icons-register');
+		return { symbolId, classes, size, version };
 	}
 });
 </script>

@@ -1,4 +1,4 @@
-# @prleasing/use
+# @prleasing/kuku
 
 Библиотека компонентов Vue 3
 
