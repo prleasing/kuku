@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-c16e11c6","path":"/guide/forms/checkbox-field.html","title":"Checkbox","lang":"ru-Ru","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1657534175000,"contributors":[{"name":"Nikita Yakin","email":"yakin95@gmail.com","commits":1}]},"filePathRelative":"guide/forms/checkbox-field.md"}');export{e as data};

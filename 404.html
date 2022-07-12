@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru-Ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.49">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <title>👀 @prleasing/kuku</title><meta name="description" content="Библиотека компонентов Vue 3">
+    <link rel="modulepreload" href="/kuku/assets/app.abbddf67.js"><link rel="modulepreload" href="/kuku/assets/404.html.d34fbcc6.js"><link rel="modulepreload" href="/kuku/assets/404.html.69ea998d.js"><link rel="prefetch" href="/kuku/assets/index.html.724c49ba.js"><link rel="prefetch" href="/kuku/assets/button.html.458302a0.js"><link rel="prefetch" href="/kuku/assets/horizontal-scroll.html.6aa648e3.js"><link rel="prefetch" href="/kuku/assets/icon.html.4559f442.js"><link rel="prefetch" href="/kuku/assets/switch.html.6ac3b0a7.js"><link rel="prefetch" href="/kuku/assets/confirm.html.9aff7fe5.js"><link rel="prefetch" href="/kuku/assets/checkbox-field.html.cb6f0e03.js"><link rel="prefetch" href="/kuku/assets/code-field.html.e6a6a860.js"><link rel="prefetch" href="/kuku/assets/date-field.html.3374a60e.js"><link rel="prefetch" href="/kuku/assets/date-range.html.a8a3c3a5.js"><link rel="prefetch" href="/kuku/assets/security-field.html.96d99c1e.js"><link rel="prefetch" href="/kuku/assets/select-auto-size.html.deb99fdf.js"><link rel="prefetch" href="/kuku/assets/select-field.html.4e9f0930.js"><link rel="prefetch" href="/kuku/assets/slider-field.html.c9b7866a.js"><link rel="prefetch" href="/kuku/assets/slider-native.html.d72ea598.js"><link rel="prefetch" href="/kuku/assets/text-field.html.a125d8b4.js"><link rel="prefetch" href="/kuku/assets/modal-card.html.12e932d5.js"><link rel="prefetch" href="/kuku/assets/modal-page.html.2ca8e1cb.js"><link rel="prefetch" href="/kuku/assets/inline-tabs.html.2fd60298.js"><link rel="prefetch" href="/kuku/assets/tabs.html.976c41b0.js"><link rel="prefetch" href="/kuku/assets/index.html.233968d9.js"><link rel="prefetch" href="/kuku/assets/button.html.e5a7faeb.js"><link rel="prefetch" href="/kuku/assets/horizontal-scroll.html.994ee3d6.js"><link rel="prefetch" href="/kuku/assets/icon.html.a1a8ce90.js"><link rel="prefetch" href="/kuku/assets/switch.html.c7ee2917.js"><link rel="prefetch" href="/kuku/assets/confirm.html.02a9afaa.js"><link rel="prefetch" href="/kuku/assets/checkbox-field.html.d0534465.js"><link rel="prefetch" href="/kuku/assets/code-field.html.e971570d.js"><link rel="prefetch" href="/kuku/assets/date-field.html.c16a48ec.js"><link rel="prefetch" href="/kuku/assets/date-range.html.f76f07a2.js"><link rel="prefetch" href="/kuku/assets/security-field.html.c83dd79e.js"><link rel="prefetch" href="/kuku/assets/select-auto-size.html.7c534e03.js"><link rel="prefetch" href="/kuku/assets/select-field.html.5f7103f8.js"><link rel="prefetch" href="/kuku/assets/slider-field.html.b089da45.js"><link rel="prefetch" href="/kuku/assets/slider-native.html.d928aba7.js"><link rel="prefetch" href="/kuku/assets/text-field.html.675e80c3.js"><link rel="prefetch" href="/kuku/assets/modal-card.html.334b843b.js"><link rel="prefetch" href="/kuku/assets/modal-page.html.d8525066.js"><link rel="prefetch" href="/kuku/assets/inline-tabs.html.4091d2a4.js"><link rel="prefetch" href="/kuku/assets/tabs.html.c38741ff.js"><link rel="prefetch" href="/kuku/assets/404.66fb23ba.js"><link rel="prefetch" href="/kuku/assets/Layout.f51569e5.js"><link rel="prefetch" href="/kuku/assets/example-button.8f7ed784.js"><link rel="prefetch" href="/kuku/assets/example-checkbox-field.035a8da3.js"><link rel="prefetch" href="/kuku/assets/example-code-field.dff5b88e.js"><link rel="prefetch" href="/kuku/assets/example-date-field.87a64e4a.js"><link rel="prefetch" href="/kuku/assets/example-date-range.75de3af2.js"><link rel="prefetch" href="/kuku/assets/example-dialog-confirm.6e7182b5.js"><link rel="prefetch" href="/kuku/assets/example-horizontal-scroll.706ccbe7.js"><link rel="prefetch" href="/kuku/assets/example-icon.b10e10a9.js"><link rel="prefetch" href="/kuku/assets/example-inline-tabs.47b08b66.js"><link rel="prefetch" href="/kuku/assets/example-modal-card.d89096f9.js"><link rel="prefetch" href="/kuku/assets/example-modal-page.8231a527.js"><link rel="prefetch" href="/kuku/assets/example-security-field.2e4232ee.js"><link rel="prefetch" href="/kuku/assets/example-select-auto-size.02b322d0.js"><link rel="prefetch" href="/kuku/assets/example-select-field.88369216.js"><link rel="prefetch" href="/kuku/assets/example-slider-field.30f7183c.js"><link rel="prefetch" href="/kuku/assets/example-slider-native.378f3dae.js"><link rel="prefetch" href="/kuku/assets/example-switch.48a956cd.js"><link rel="prefetch" href="/kuku/assets/example-tabs.f4edc443.js"><link rel="prefetch" href="/kuku/assets/example-text-field.0d32a3d9.js">
+    <link rel="stylesheet" href="/kuku/assets/style.4de38135.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><main class="page"><div class="theme-default-content"><h1>404</h1><blockquote>There&#39;s nothing here.</blockquote><a href="/kuku/" class="">Take me home</a></div></main></div><!----><!--]--></div>
+    <script type="module" src="/kuku/assets/app.abbddf67.js" defer></script>
+  </body>
+</html>

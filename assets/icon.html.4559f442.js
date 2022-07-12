@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-5118f894","path":"/guide/icon.html","title":"\u0418\u043A\u043E\u043D\u043A\u0438","lang":"ru-Ru","frontmatter":{},"excerpt":"","headers":[],"git":{"updatedTime":1657534175000,"contributors":[{"name":"Nikita Yakin","email":"yakin95@gmail.com","commits":1}]},"filePathRelative":"guide/icon.md"}');export{t as data};
