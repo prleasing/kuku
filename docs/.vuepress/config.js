@@ -10,7 +10,7 @@ module.exports = defineUserConfig({
 	alias: {
 		'@components': resolve(__dirname, '../.vuepress/components')
 	},
-	base: 'kuku',
+	base: '/kuku/',
 	theme: defaultTheme({
 		// sidebar array
 		// all pages will use the same sidebar
