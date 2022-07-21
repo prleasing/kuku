@@ -8,12 +8,14 @@
 	--button-brand--isActive: #403e4b;
 	--button-brand-color--isActive: var(--primary-brand-color);
 	--button-font-size: calc(#{(util.calculate-size(14))});
-	--button-radius: calc(#{(util.calculate-size(8))});
-	--button-height: calc(#{(util.calculate-size(50))});
+	--kuku-button-radius: calc(#{(util.calculate-size(8))});
+	--kuku-button-height: calc(#{(util.calculate-size(50))});
 	--kuku--button-icon: currentcolor;
 	--kuku--button-icon--isHover: currentcolor;
 	--kuku--button-icon--isActive: currentcolor;
 	--kuku--button-base: #fff;
+	--kuku--button-color: var(--primary-text-color);
+	--kuku--button-border: var(--primary-text-color);
 }
 
 @mixin reset() {
@@ -43,15 +45,15 @@
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	height: var(--button-height);
+	height: var(--kuku-button-height);
 	padding: 0 calc(#{(util.calculate-size(16))});
-	color: var(--primary-text-color);
+	color: var(--kuku--button-color);
 	font-weight: 500;
 	font-size: var(--button-font-size);
 	line-height: 100%;
 	background-color: var(--kuku--button-base);
-	border: 1px solid var(--primary-text-color);
-	border-radius: var(--button-radius);
+	border: 1px solid var(--kuku--button-border);
+	border-radius: var(--kuku-button-radius);
 	cursor: pointer;
 	transition: color 200ms ease-in-out, background 200ms ease-in-out, border 200ms ease-in-out;
 	appearance: none;

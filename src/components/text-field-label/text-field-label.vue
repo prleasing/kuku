@@ -47,7 +47,7 @@ export default defineComponent({
 
 .kuku-text-field-label {
 	font-weight: 500;
-	font-size: 1 calc(#{(util.calculate-size(12))});
+	font-size: var(--kuku-text-field-label-font-size, calc(#{(util.calculate-size(12))}));
 	line-height: 150%;
 	color: var(--kuku--text-field-label-color);
 	cursor: pointer;

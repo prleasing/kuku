@@ -1,7 +1,7 @@
 {
 	"name": "@prleasing/kuku",
 	"description": "Библиотека компонентов Vue 3",
-	"version": "1.2.1",
+	"version": "1.2.2",
 	"keywords": [
 		"typescript",
 		"vue 3",
@@ -41,22 +41,22 @@
 		"prepublishOnly": "npm run build"
 	},
 	"devDependencies": {
-		"@taknepoidet-config/eslint-config": "^1.9.2",
-		"@taknepoidet-config/prettier": "^1.9.1",
-		"@taknepoidet-config/stylelint": "^1.9.2",
-		"@types/luxon": "^2.3.2",
-		"@vitejs/plugin-vue": "^2.3.3",
+		"@taknepoidet-config/eslint-config": "^1.10.0",
+		"@taknepoidet-config/prettier": "^1.10.0",
+		"@taknepoidet-config/stylelint": "^1.10.0",
+		"@types/luxon": "^3.0.0",
+		"@vitejs/plugin-vue": "^3.0.1",
 		"@vuepress/plugin-register-components": "^2.0.0-beta.48",
-		"eslint": "^8.18.0",
+		"eslint": "^8.20.0",
 		"gh-pages": "^4.0.0",
 		"lint-staged": "^13.0.3",
 		"prettier": "^2.7.1",
 		"rollup-plugin-analyzer": "^4.0.0",
-		"rollup-plugin-visualizer": "^5.6.0",
+		"rollup-plugin-visualizer": "^5.7.1",
 		"sass": "^1.53.0",
 		"stylelint": "^14.9.1",
-		"vite": "^2.9.14",
-		"vite-plugin-dts": "^1.2.1",
+		"vite": "^3.0.2",
+		"vite-plugin-dts": "^1.4.0",
 		"vite-plugin-svg-icons": "^2.0.1",
 		"vuepress": "^2.0.0-beta.48",
 		"@vue/component-compiler-utils": "^3.3.0",
@@ -64,7 +64,7 @@
 		"@interactjs/types": "^1.10.17"
 	},
 	"dependencies": {
-		"@prleasing/use": "^1.2.1",
+		"@prleasing/use": "^1.2.2",
 		"@prleasing/utility": "^1.2.0",
 		"interactjs": "^1.10.17"
 	},

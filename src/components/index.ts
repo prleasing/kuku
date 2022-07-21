@@ -32,3 +32,4 @@ export * from './horizontal-scroll';
 export * from './vertical-scroll';
 export * from './dialog-wrapper';
 export * from './dialog';
+export * from './detail';

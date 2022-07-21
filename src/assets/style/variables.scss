@@ -1,0 +1,25 @@
+@use 'util';
+
+$padding: 16;
+
+:root {
+	--base: 16;
+
+	//--padding: calc(#{util.rem($padding)});
+	--gutter: calc(var(--padding) * 1px);
+	--ears: var(--padding);
+
+	//--container: calc(#{util.rem(1170)});
+	--kuku--base: 14 !important;
+	--kuku--clamp: clamp(var(--kuku--base-px, 14px), 3.5vw, 20px);
+
+	//--kuku--clamp: 18px !important;
+
+	// components
+}
+
+@media screen and (min-width: 932px) {
+	:root {
+		//--ears: calc(1px * 0);
+	}
+}

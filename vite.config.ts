@@ -1,19 +1,17 @@
-import {resolve, isAbsolute} from 'path';
+import { resolve, isAbsolute } from 'path';
 // @ts-ignore
 import dts from 'vite-plugin-dts';
-import {defineConfig} from 'vite';
+import { defineConfig } from 'vite';
 // @ts-ignore
 import vue from '@vitejs/plugin-vue';
 // @ts-ignore
-import {createSvgIconsPlugin} from 'vite-plugin-svg-icons';
-import { visualizer } from "rollup-plugin-visualizer";
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 
 const isExternal = (id: string) => {
-
-	if (["virtual:svg-icons-register", "plugin-vue:export-helper"].includes(id)) {
-		return false
+	if (['virtual:svg-icons-register', 'plugin-vue:export-helper'].includes(id)) {
+		return false;
 	}
-	return !id.startsWith(".") && !isAbsolute(id)
+	return !id.startsWith('.') && !isAbsolute(id);
 };
 
 export default defineConfig({
@@ -43,13 +41,8 @@ export default defineConfig({
 		},
 		minify: 'terser',
 		rollupOptions: {
-			plugins: [
-				visualizer({
-					emitFile: true,
-					file: 'stats.html'
-				})
-			],
 			external: isExternal,
+			// external: ['vue'],
 			output: {
 				preserveModules: true,
 				globals: {

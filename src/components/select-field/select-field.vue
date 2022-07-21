@@ -104,13 +104,13 @@ export default defineComponent({
 	$self: &;
 	overflow: hidden;
 	@include input.reset();
-	--text-field-border-radius: calc(#{(util.calculate-size(8))});
+	--kuku-text-field-border-radius: calc(#{(util.calculate-size(8))});
 	position: relative;
 	cursor: pointer;
 	color: var(--text-field-color);
 	border: none;
 	background: var(--kuku--text-field-background);
-	border-radius: var(--text-field-border-radius);
+	border-radius: var(--kuku-text-field-border-radius);
 	padding: calc(#{(util.calculate-size(10))}) calc(#{(util.calculate-size(16))});
 	font-weight: 500;
 	font-size: calc(#{(util.calculate-size(16))});

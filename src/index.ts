@@ -8,10 +8,9 @@ export * from './plugins/dialog';
 export * from './components';
 export * from './composables';
 
-
 export function iconInject() {
 	// @ts-ignore
-	return import('virtual:svg-icons-register')
+	return import('virtual:svg-icons-register');
 }
 
 // export const Kuku: Plugin = {

@@ -72,6 +72,9 @@ export default defineComponent({
 @use '../../assets/style/util';
 @use '../../assets/style/button';
 
+:root {
+	--kuku--button-secondary-bg: #f8f8fa;
+}
 .kuku-button {
 	$self: &;
 	cursor: pointer;
@@ -93,8 +96,9 @@ export default defineComponent({
 	}
 	&--secondary {
 		@include button.base;
-		background: #f8f8fa;
-		border-color: #f8f8fa;
+		color: var(--kuku--button-secondary-color);
+		background: var(--kuku--button-secondary-bg);
+		border-color: var(--kuku--button-secondary-border, var(--kuku--button-secondary-bg));
 	}
 	&:disabled,
 	&--disabled {

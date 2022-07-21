@@ -7,8 +7,8 @@ export const buttonInstall = withInstall(Btn);
 export interface BtnExpose {
 	$el: HTMLElement;
 }
-// declare module 'vue' {
-// 	export interface GlobalComponents {
-// 		KukuButton: typeof Button;
-// 	}
-// }
+declare module 'vue' {
+	export interface GlobalComponents {
+		KukuButton: typeof Component;
+	}
+}

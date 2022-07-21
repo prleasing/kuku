@@ -47,17 +47,19 @@ export default defineComponent({
 
 <style lang="scss">
 @use '../../assets/style/util';
+:root {
+	--kuku-form-element-radius: calc(#{(util.calculate-size(8))});
+}
 .kuku-form-element {
 	$self: &;
 	position: relative;
-
 	min-height: calc(#{(util.calculate-size(58))});
 	> .kuku-text-field-label {
 		> span {
 			z-index: 1;
 			position: absolute;
-			top: calc(#{(util.calculate-size(8))});
-			left: calc(#{(util.calculate-size(16))});
+			top: var(--kuku-form-element-label-top, calc(#{(util.calculate-size(8))}));
+			left: var(--kuku-form-element-label-left, calc(#{(util.calculate-size(16))}));
 			display: inline-block;
 		}
 	}
@@ -67,8 +69,8 @@ export default defineComponent({
 	> .kuku-text-field,
 	> .kuku-select-field,
 	> .kuku-slider-field {
-		padding-top: calc(#{(util.calculate-size(24))});
-		border-radius: calc(#{(util.calculate-size(8))}) calc(#{(util.calculate-size(8))}) 0 0;
+		padding-top: var(--kuku-form-element-top, calc(#{(util.calculate-size(24))}));
+		border-radius: var(--kuku-form-element-radius) var(--kuku-form-element-radius) 0 0;
 		border-bottom: 1px solid var(--kuku--form-element-border);
 	}
 	> .kuku-data-filed {
